@@ -40,29 +40,35 @@ def level3():
     viz.vertex(-2.0000009433759036,2.1339740515579146,-9.1)
     viz.vertex(-1.7339563037605097,2.357211500218198,-9.1)
     viz.vertex(-1.560307801458682,2.6579786965690815,-9.1)
+    viz.vertexColor(0,0,1)
+    viz.vertex(-1.5,2.75,-9.1)
     arrow = viz.endLayer()
     drawList.append(arrow)
 
 def level2():
-	global drawList, level
-	level = 2
-	viz.startLayer(viz.POINTS)
-	viz.pointSize(20)
-	viz.vertexColor(1,0,0)
-	viz.vertex(-3.5,2.0,-9.1)
-	viz.vertex(-1.5,2.0,-9.1)
-	viz.vertex(-3.5,4.0,-9.1)
-	viz.vertex(-1.5,4.0,-9.1)
-	arrow = viz.endLayer()
-	drawList.append(arrow)
+    global drawList, level
+    level = 2
+    viz.startLayer(viz.POINTS)
+    viz.pointSize(20)
+    viz.vertexColor(0,1,0)
+    viz.vertex(-1.5,2.0,-9.1)
+    viz.vertexColor(1,0,0)
+    viz.vertex(-3.5,2.0,-9.1)
+    viz.vertex(-3.5,4.0,-9.1)
+    viz.vertex(-1.5,4.0,-9.1)
+    viz.vertexColor(0,0,1)
+    viz.vertex(-1.65,2.0,-9.1)
+    arrow = viz.endLayer()
+    drawList.append(arrow)
 
 def level1():
     global drawList,level, startPoint, endPoint
     level = 1
     viz.startLayer(viz.POINTS)
     viz.pointSize(20)
-    viz.vertexColor(1,0,0)
+    viz.vertexColor(0,0,1)
     viz.vertex(-3.5,2.0,-9.1)
+    viz.vertexColor(0,1,0)
     viz.vertex(-1.5,2.0,-9.1)
     arrow = viz.endLayer()
     drawList.append(arrow)
@@ -88,3 +94,6 @@ def clearDrawing():
 # 7. Metric -- completed
 # 8. Time -- completed
 # 9. Scoring
+
+# 45 inches 115 cm y-axis 
+# 166 cm  x-axis
