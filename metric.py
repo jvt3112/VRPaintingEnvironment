@@ -15,7 +15,7 @@ def circleClearCheck(pointList, threshold, centre, originalPerimeter, r=1):
 	perimeter = getDistance(pointList)
 	
 	if perimeter<originalPerimeter+threshold and perimeter>originalPerimeter-threshold:
-		return True,(1-abs(perimeter-originalPerimeter)/originalPerimeter)*100
+		return True,(1-abs(perimeter-originalPerimeter)/(originalPerimeter*2))*100
 	else:
 		return False,None
 
@@ -28,7 +28,7 @@ def lineClearCheck(listOfPoints, threshold, originalLength=2):
             return False,None
     perimeter = getDistance(listOfPoints)
     if perimeter<originalLength+threshold and perimeter>originalLength-threshold:
-        return True,(1-abs(perimeter-originalLength)/originalLength)*100
+        return True,(1-abs(perimeter-originalLength)/(originalLength*2))*100
     else:
         return False,None
 
@@ -58,7 +58,7 @@ def squareClearCheck(pointList, threshold, checkPointList, originalPerimeter=8):
 							return False, None
 	perimeter = getDistance(pointList)
 	if perimeter<originalPerimeter+threshold and perimeter>originalPerimeter-threshold:
-		return True, (1-abs(perimeter-originalPerimeter)/originalPerimeter)*100
+		return True, (1-abs(perimeter-originalPerimeter)/(originalPerimeter*2))*100
 	else:
 		return False, None
 
