@@ -87,13 +87,18 @@ def clearDrawing():
 
 # 1. Physical Space to Virtual Space
 # 2. Workspace
-# 3. Automatic -- completed
-# 4. Audio -- completed
+# 3. Automatic
+# 4. Audio 
 # 5. Boundary exit entry
-# 6. Boundary start recording -- completed
-# 7. Metric -- completed
-# 8. Time -- completed
+# 6. Boundary start recording 
+# 7. Metric 
+# 8. Time 
 # 9. Scoring
+
+
+# addd a animation path
+# timers decrease
+# 
 
 # 45 inches 115 cm y-axis 
 # 166 cm  x-axis

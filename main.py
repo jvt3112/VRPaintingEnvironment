@@ -16,8 +16,8 @@ from paint import *
 viz.setMultiSample(4)
 viz.fov(60)
 viz.go()
-viz.MainView.move([-3,0,-3])
-viz.MainView.setEuler([180,0,0])
+#viz.MainView.move([-3,0,-3])
+#viz.MainView.setEuler([180,0,0])
 piazza = vizfx.addChild(r'C:\Users\hp\OneDrive\Desktop\VizardTutorial\paintingTP\Painting\cottage1.osgb')
 piazza1 = vizfx.addChild(r'C:\Users\hp\OneDrive\Desktop\VizardTutorial\paintingTP\Painting\blackboard.osgb', pos=(-5,5.3,-9.2), euler = (180,0,0)) # pos=(6.3,5.3,0))
 
@@ -47,6 +47,33 @@ threshold = 0.5
 fileName = userName + '.txt'
 myFile = open(fileName, "w+")
 myFile.write('User Name: '+ userName + '\n')
+
+SPEED = 2.5
+MODE = viz.SPEED
+ROTATE_MODE = viz.ROTATE_Y_UP
+
+def SetRotateMode(mode):
+    global ROTATE_MODE
+    ROTATE_MODE = mode
+
+def AnimateView(pos):
+    action = vizact.goto(pos,SPEED,MODE,pivot=(0,1,0),rotate_mode=ROTATE_MODE)
+    viz.MainView.runAction(action)
+
+def onkryDownSetPos():
+    viz.MainView.setPosition([0,0,0])
+    viz.MainView.move([-5.5,0,-3])
+    viz.MainView.setEuler([180,0,0])
+    global text_2D_welcome
+    text_2D_welcome.remove()
+ 
+
+#Setup keyboard events
+text_2D_welcome = viz.addText("Welcome!!",parent=viz.SCREEN)
+AnimateView([7,5,-8])
+#vizact.onkeydown('4',AnimateView,([7,5,-8]))
+vizact.onkeydown('1',onkryDownSetPos)
+
 def reachedPointStartLevel():
     point = np.array(getPos())[:2]
     point[0] *= 10 
@@ -188,7 +215,7 @@ def ontimerChange():
         global timer
         global text_2D_screen
         text_2D_screen.remove()
-        text_2D_screen = viz.addText(str(timer),parent=viz.SCREEN)
+        text_2D_screen = viz.addText(str(30-timer),parent=viz.SCREEN)
         timer += 1
     
 
